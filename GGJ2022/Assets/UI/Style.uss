@@ -4,7 +4,7 @@
     -unity-font: url('Library/unity default resources');
     -unity-text-outline-width: 0;
     -unity-text-outline-color: rgb(0, 0, 0);
-    font-size: 15px;
+    font-size: 100px;
     border-left-color: rgb(255, 255, 255);
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);
@@ -14,13 +14,13 @@
     border-top-width: 0;
     border-bottom-width: 0;
     cursor: initial;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-    margin-top: 3px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-top: 3%;
     margin-bottom: 0;
     color: rgba(36, 36, 36, 255);
 }
@@ -40,8 +40,14 @@
     color: rgba(0, 0, 0, 255);
     -unity-text-align: upper-center;
     -unity-font-style: bold;
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 100px;
+    margin-bottom: 0;
     padding-left: 2px;
     display: flex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
