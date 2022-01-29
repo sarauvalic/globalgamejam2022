@@ -65,9 +65,25 @@ public class Coin : MonoBehaviour
 
 	public void FlipCoin()
 	{
+		animator.ResetTrigger("A2A");
+		animator.ResetTrigger("A2D");
+
 		var nextSide = CalculateSide();
-		currentSide = nextSide;
-		Text.text = currentSide.ToString();
+
+		if (currentSide == nextSide)
+		{
+			animator.SetTrigger("A2A");
+		}
+		else
+		{
+			animator.SetTrigger("A2D");
+		}
+
+		currentSide = 0;
+	}
+
+	public void CoinFlipped()
+	{
 		questionController.ChooseQuestion(currentSide);
 	}
 
