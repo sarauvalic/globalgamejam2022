@@ -250,8 +250,8 @@ RectTransform:
   m_Father: {fileID: 818682648}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15, y: 0.27}
-  m_AnchorMax: {x: 0.87, y: 0.65}
+  m_AnchorMin: {x: 0.15, y: 0.22}
+  m_AnchorMax: {x: 0.81, y: 0.7}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -281,14 +281,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 60
+    m_MaxSize: 66
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Question 2
+  m_Text: Who in the room is the most likely to fall for a prank?
 --- !u!222 &200033071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &467934351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1075,6 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631908195}
   - component: {fileID: 631908194}
+  - component: {fileID: 631908196}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1108,6 +1109,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &631908196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631908193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa5e4162f6600c4c950fc1cabc6108a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TopQuestion: {fileID: 0}
+  BottomQuestion: {fileID: 0}
+  OnTopChosen:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBottomChosen:
+    m_PersistentCalls:
+      m_Calls: []
+  Pairs:
+  - "A time when you were pranked!;The best prank you\u2019ve ever done!"
+  - "A time when you took the blame for something naughty someone else did!;A time
+    someone got the blame for something naughty you\u2019ve done!"
+  - Give away some of your drink or snacks to a person of your choice!;Steal drinks
+    or snacks from a person of your choice!
+  - Say something nice to the person to your left!;Roast the person to your right!
+  - Send a nice message to a family member or friend!;Tell us about a lie you told
+    a family member as a child!
+  - Who in the room is most likely to reincarnate into a noble lion?;Who in the room
+    is most likely to reincarnate into a blob fish?
+  - Who in the room is most likely to pull the best prank?;Who in the room is the
+    most likely to fall for a prank?
 --- !u!1 &654850733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,8 +2419,8 @@ RectTransform:
   m_Father: {fileID: 1642021991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15, y: 0.28}
-  m_AnchorMax: {x: 0.85, y: 0.81}
+  m_AnchorMin: {x: 0.15, y: 0.23}
+  m_AnchorMax: {x: 0.76, y: 0.84}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2415,15 +2449,15 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 80
+    m_MinSize: 1
+    m_MaxSize: 66
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Question 1
+  m_Text: Who in the room is most likely to pull the best prank?
 --- !u!222 &1279258030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2763,7 +2797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1516777989
 RectTransform:
   m_ObjectHideFlags: 0
