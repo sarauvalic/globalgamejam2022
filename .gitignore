@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/GGJ2022/Assets/3Dmodels/coin.mtl.meta
+/GGJ2022/Assets/3Dmodels/coin.obj.meta
+/GGJ2022/Assets/3Dmodels.meta

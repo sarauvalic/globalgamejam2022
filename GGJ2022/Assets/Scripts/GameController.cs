@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 	public void QuitGame()
 	{
 		#if UNITY_EDITOR
-			EditorApplication.isPlaying = true;		
+			EditorApplication.isPlaying = false;		
 		#else
 			Application.Quit();
 		#endif
