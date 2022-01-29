@@ -8,12 +8,13 @@ public class Coin : MonoBehaviour
 {
 	[Range(0,1)]
 	public float RandomThreshold;
+
 	[Range((float)0.01,(float)0.99)]
 	public float Weight;
 	public Animator animator;
 
 
-	public List<DelayableEvent> OnClick;
+	//public List<DelayableEvent> OnClick;
 	public int currentSide = 0;
 
 	private QuestionController questionController;
@@ -25,23 +26,23 @@ public class Coin : MonoBehaviour
 
 	private void Update()
 	{
-		Vector3 screenpoint = new Vector3(100000,100000,100000);
-		if (Input.GetMouseButtonDown(0))
-		{
-			screenpoint = Input.mousePosition;
-		}
-        else if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
-            {
-                screenpoint = touch.position;
-            }
-		}
-
-		if(IsHit(screenpoint))
-			InvokeEvents();
+	//	Vector3 screenpoint = new Vector3(100000,100000,100000);
+	//	if (Input.GetMouseButtonDown(0))
+	//	{
+	//		screenpoint = Input.mousePosition;
+	//	}
+    //    else if (Input.touchCount > 0)
+    //    {
+    //        Touch touch = Input.GetTouch(0);
+	//
+    //        if (touch.phase == TouchPhase.Began)
+    //        {
+    //            screenpoint = touch.position;
+    //        }
+	//	}
+	//
+	//	if(IsHit(screenpoint))
+	//		InvokeEvents();
 	}
 
 	private bool IsHit(Vector3 screenpoint)
@@ -54,13 +55,13 @@ public class Coin : MonoBehaviour
 			return false;
 	}
 
-	public void InvokeEvents()
-	{
-		foreach (var item in OnClick)
-		{
-			StartCoroutine(Delay(item));
-		}
-	}
+	//public void InvokeEvents()
+	//{
+	//	foreach (var item in OnClick)
+	//	{
+	//		StartCoroutine(Delay(item));
+	//	}
+	//}
 
 	public void FlipCoin()
 	{
@@ -101,9 +102,10 @@ public class Coin : MonoBehaviour
 		}
 	}
 
-	private IEnumerator Delay(DelayableEvent delayableEvent)
+	private IEnumerator WaitForFlip()
 	{
-		yield return new WaitForSeconds(delayableEvent.delay);
-		delayableEvent.OnInvoke.Invoke();
+		yield return new WaitForSeconds((float)3.542);
+		
+		CoinFlipped();
 	}
 }

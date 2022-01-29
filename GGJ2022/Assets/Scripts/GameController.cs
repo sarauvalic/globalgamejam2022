@@ -16,14 +16,4 @@ public class GameController : MonoBehaviour
 			Application.Quit();
 		#endif
 	}
-
-	public void GoToCoin()
-	{
-
-	}
-
-	public void GoToSpinTheBottle()
-	{
-
-	}
 }

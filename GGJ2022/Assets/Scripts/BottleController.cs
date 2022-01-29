@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class BottleController : MonoBehaviour
 {
-    public Rigidbody rigidbody;
+    public Rigidbody rb;
     public float forceStrengthMin;
     public float forceStrengthMax;
     public float velocityThreshold;
@@ -18,15 +18,15 @@ public class BottleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rigidbody.angularVelocity.z <= velocityThreshold)
+        if (rb.angularVelocity.z <= velocityThreshold)
 	    {
-            rigidbody.angularVelocity= Vector3.zero;
+            rb.angularVelocity= Vector3.zero;
             OnBottleStop.Invoke();
 	    }
     }
@@ -34,7 +34,7 @@ public class BottleController : MonoBehaviour
     public void SpinBottle()
 	{
         var forceStrength = Random.Range(forceStrengthMin, forceStrengthMax);
-        rigidbody.AddForceAtPosition(forcePos.right * - forceStrength, forcePos.position, ForceMode.Impulse);
+        rb.AddForceAtPosition(forcePos.right * - forceStrength, forcePos.position, ForceMode.Impulse);
         OnBottleSpin.Invoke();
 	}
 }
