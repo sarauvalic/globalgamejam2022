@@ -14,12 +14,14 @@ public class Coin : MonoBehaviour
 	public Text Text;
 
 	public List<DelayableEvent> OnClick;
-
 	public int currentSide = 0;
+
+	private QuestionController questionController;
 
 	void Start()
 	{
 		Text.text = currentSide.ToString();
+		questionController = FindObjectOfType<QuestionController>();
 	}
 
 	private void Update()
@@ -66,6 +68,7 @@ public class Coin : MonoBehaviour
 		var nextSide = CalculateSide();
 		currentSide = nextSide;
 		Text.text = currentSide.ToString();
+		questionController.ChooseQuestion(currentSide);
 	}
 
 	private int CalculateSide()
