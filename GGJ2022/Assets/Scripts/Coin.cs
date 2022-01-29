@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
 	[Range((float)0.01,(float)0.99)]
 	public float Weight;
 	public Animator animator;
-	public Text Text;
+
 
 	public List<DelayableEvent> OnClick;
 	public int currentSide = 0;
@@ -20,7 +20,6 @@ public class Coin : MonoBehaviour
 
 	void Start()
 	{
-		Text.text = currentSide.ToString();
 		questionController = FindObjectOfType<QuestionController>();
 	}
 
