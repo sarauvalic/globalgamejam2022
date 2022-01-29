@@ -7,15 +7,17 @@ using UnityEngine.UI;
 public class BottleController : MonoBehaviour
 {
     public int MaxPlayers = 6;
-    public List<string> Players;
+    public List<string> CurrentPlayers;
 
     public string ChosenPlayer;
 
-    public GameObject PlayerListContainer;
+    public List<Player> PlayerList;
     public Text ChosenPlayerText;
 
     public UnityEvent OnSpin;
     public UnityEvent OnPlayerChoosen;
+
+    private InputField NewPlayer;
 
     public int totalWeight;
     public int weightAdded;
@@ -27,6 +29,11 @@ public class BottleController : MonoBehaviour
     void Start()
     {
         weights = new List<int>();
+        NewPlayer = FindObjectOfType<InputField>();
+        foreach (var item in PlayerList)
+	    {
+            item.gameObject.SetActive(false);
+	    }
     }
 
     // Update is called once per frame
@@ -35,21 +42,33 @@ public class BottleController : MonoBehaviour
         
     }
 
-    public void AddPlayer(string name)
+    public void AddPlayer()
 	{
-        if (Players.Count < MaxPlayers)
+        var name = NewPlayer.text;
+        var index = CurrentPlayers.Count -1;
+        if (CurrentPlayers.Count < MaxPlayers)
 	    {
-            Players.Add(name);
+            CurrentPlayers.Add(name);
+            index = CurrentPlayers.Count-1;
+            PlayerList[index].name = name;
+            PlayerList[index].text.text = name;
+            PlayerList[index].gameObject.SetActive(true);
+	    }
+        if (CurrentPlayers.Count >= MaxPlayers)
+	    {
+            NewPlayer.gameObject.SetActive(false);
+            AllPlayersAdded();
 	    }
 	}
 
     public void AllPlayersAdded()
 	{
         weights.Clear();
-        for (int i = 0; i < Players.Count; i++)
+
+        for (int i = 0; i < CurrentPlayers.Count; i++)
 		{
-            weights.Add(weightAdded*10);
-            totalWeight += weightAdded*10;
+            weights.Add(weightAdded * 10);
+            totalWeight += weightAdded * 10;
 		}
 	}
 
@@ -69,7 +88,7 @@ public class BottleController : MonoBehaviour
             {
                 weights[i] -= weightAdded;
                 totalWeight -= weightAdded;
-                return Players[i];
+                return CurrentPlayers[i];
             }
             extra += weights[i];
 		}
