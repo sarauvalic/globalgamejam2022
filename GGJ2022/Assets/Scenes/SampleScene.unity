@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 289969971}
   - component: {fileID: 289969973}
   - component: {fileID: 289969972}
+  - component: {fileID: 289969974}
   m_Layer: 5
   m_Name: Black
   m_TagString: Untagged
@@ -440,6 +441,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289969970}
   m_CullTransparentMesh: 1
+--- !u!95 &289969974
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289969970}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c38da14f4746f2543b5293ba8d0a8a02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &311423406
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +493,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 20
+  m_Priority: 1
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -1130,9 +1150,17 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -7178019091698959062, guid: f6bf65d2462839e4ea15ec95197923ff, type: 2}
+    value: {fileID: 1516777988}
+  - key: {fileID: -1539493372888891222, guid: f6bf65d2462839e4ea15ec95197923ff, type: 2}
+    value: {fileID: 467934350}
+  - key: {fileID: 2253947122053045766, guid: f6bf65d2462839e4ea15ec95197923ff, type: 2}
+    value: {fileID: 289969974}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - fc3e4847e788bd642ae21abe649c137f: {fileID: 289969970}
+    - e14497dec44135747840fe14809fe3dd: {fileID: 819643214}
 --- !u!1 &818682647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,7 +1604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -6}
+  m_LocalPosition: {x: -5, y: 0.5, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 835286436}
