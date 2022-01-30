@@ -55,14 +55,6 @@ public class Coin : MonoBehaviour
 			return false;
 	}
 
-	//public void InvokeEvents()
-	//{
-	//	foreach (var item in OnClick)
-	//	{
-	//		StartCoroutine(Delay(item));
-	//	}
-	//}
-
 	public void FlipCoin()
 	{
 		animator.ResetTrigger("A2A");
@@ -80,6 +72,7 @@ public class Coin : MonoBehaviour
 		}
 
 		currentSide = 0;
+		StartCoroutine(WaitForFlip());
 	}
 
 	public void CoinFlipped()
@@ -104,6 +97,7 @@ public class Coin : MonoBehaviour
 
 	private IEnumerator WaitForFlip()
 	{
+		var seconds = 
 		yield return new WaitForSeconds((float)3.542);
 		
 		CoinFlipped();
