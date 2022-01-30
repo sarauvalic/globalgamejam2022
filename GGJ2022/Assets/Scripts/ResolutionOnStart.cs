@@ -8,7 +8,7 @@ public class ResolutionOnStart : MonoBehaviour
      {
          //Set screen size for Standalone
 		#if UNITY_STANDALONE
-         Screen.SetResolution(1125, 2436, false);
+         Screen.SetResolution(375, 812, false);
          Screen.fullScreen = false;
 		#endif
      }
