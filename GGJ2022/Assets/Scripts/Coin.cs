@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System.Linq;
 
 public class Coin : MonoBehaviour
 {
@@ -97,7 +98,11 @@ public class Coin : MonoBehaviour
 
 	private IEnumerator WaitForFlip()
 	{
-		var seconds = 
+		//var seconds = animator.GetCurrentAnimatorClipInfo(0).Length;
+		var clips = animator.runtimeAnimatorController.animationClips;
+		
+		
+		
 		yield return new WaitForSeconds((float)3.542);
 		
 		CoinFlipped();
