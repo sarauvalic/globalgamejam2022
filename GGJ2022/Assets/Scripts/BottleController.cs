@@ -15,6 +15,8 @@ public class BottleController : MonoBehaviour
     public UnityEvent OnBottleSpin;
     public UnityEvent OnBottleStop;
 
+    private bool spinning=false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +26,12 @@ public class BottleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.angularVelocity.z <= velocityThreshold)
+        if (spinning && rb.angularVelocity.z <= velocityThreshold)
 	    {
-            rb.angularVelocity= Vector3.zero;
+            Debug.Log("stopped spinning");
+            spinning = false;
+            //rb.angularVelocity= Vector3.zero;
+            rb.angularVelocity.Set(0,0,0);
             OnBottleStop.Invoke();
 	    }
     }
@@ -36,5 +41,11 @@ public class BottleController : MonoBehaviour
         var forceStrength = Random.Range(forceStrengthMin, forceStrengthMax);
         rb.AddForceAtPosition(forcePos.right * - forceStrength, forcePos.position, ForceMode.Impulse);
         OnBottleSpin.Invoke();
+        StartCoroutine(Wait());
+	}
+    private IEnumerator Wait()
+	{
+        yield return new WaitForSeconds(1);
+        spinning = true;
 	}
 }

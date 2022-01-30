@@ -453,6 +453,8 @@ PlayableDirector:
     value: {fileID: 989994842}
   - key: {fileID: 2371982634983617748, guid: 14c50974bfbe3cb4dabbdbab49b25265, type: 2}
     value: {fileID: 991949154}
+  - key: {fileID: -7776181856182410898, guid: 14c50974bfbe3cb4dabbdbab49b25265, type: 2}
+    value: {fileID: 1678245752}
   m_ExposedReferences:
     m_References:
     - c0c075aee1fbda1498cf8ae6edb377fa: {fileID: 1678245750}
@@ -766,29 +768,17 @@ MonoBehaviour:
   OnBottleStop:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1315110699}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1678245752}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 989994842}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
+          m_StringArgument: ShowContinue
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!64 &250391908
 MeshCollider:
@@ -2331,7 +2321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &862786860
 Transform:
   m_ObjectHideFlags: 0
@@ -2665,7 +2655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &989994843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3454,7 +3444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1315110700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3898,7 +3888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1516777989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4122,10 +4112,10 @@ PlayableDirector:
     value: {fileID: 94381128}
   - key: {fileID: -1029304802991737515, guid: 39206f395a9ba744eb99764facfc5009, type: 2}
     value: {fileID: 311423406}
-  - key: {fileID: 2260417721944962959, guid: 39206f395a9ba744eb99764facfc5009, type: 2}
-    value: {fileID: 989994842}
   - key: {fileID: -2853105323324722445, guid: 39206f395a9ba744eb99764facfc5009, type: 2}
     value: {fileID: 991949154}
+  - key: {fileID: -7239015437145033792, guid: 39206f395a9ba744eb99764facfc5009, type: 2}
+    value: {fileID: 1678245752}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1642021990
@@ -4431,13 +4421,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1678245751}
+  - component: {fileID: 1678245752}
   m_Layer: 5
   m_Name: BottleUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1678245751
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4463,6 +4454,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1678245752
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678245750}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9be5be268e6038c4f900cc4c5a88e15d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1793201515
 GameObject:
   m_ObjectHideFlags: 0
