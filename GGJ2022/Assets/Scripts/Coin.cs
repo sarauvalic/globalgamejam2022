@@ -14,8 +14,8 @@ public class Coin : MonoBehaviour
 	public float Weight;
 	public Animator animator;
 
+	public UnityEvent OnCoinFlipped;
 
-	//public List<DelayableEvent> OnClick;
 	public int currentSide = 0;
 
 	private QuestionController questionController;
@@ -25,42 +25,18 @@ public class Coin : MonoBehaviour
 		questionController = FindObjectOfType<QuestionController>();
 	}
 
-	private void Update()
-	{
-	//	Vector3 screenpoint = new Vector3(100000,100000,100000);
-	//	if (Input.GetMouseButtonDown(0))
-	//	{
-	//		screenpoint = Input.mousePosition;
-	//	}
-    //    else if (Input.touchCount > 0)
-    //    {
-    //        Touch touch = Input.GetTouch(0);
-	//
-    //        if (touch.phase == TouchPhase.Began)
-    //        {
-    //            screenpoint = touch.position;
-    //        }
-	//	}
-	//
-	//	if(IsHit(screenpoint))
-	//		InvokeEvents();
-	}
 
-	private bool IsHit(Vector3 screenpoint)
+	public void ResetCoin()
 	{
-		RaycastHit hit;
-		Ray ray = Camera.main.ScreenPointToRay(screenpoint);
-		if(Physics.Raycast(ray, out hit))
-			return true;
-		else 
-			return false;
+		animator.ResetTrigger("A2A");
+		animator.ResetTrigger("A2D");
+		animator.SetTrigger("Still");
 	}
 
 	public void FlipCoin()
 	{
 		Debug.Log("start flip");
-		animator.ResetTrigger("A2A");
-		animator.ResetTrigger("A2D");
+		
 
 		var nextSide = CalculateSide();
 
@@ -106,5 +82,6 @@ public class Coin : MonoBehaviour
 		yield return new WaitForSeconds(seconds);
 		
 		CoinFlipped();
+		OnCoinFlipped.Invoke();
 	}
 }
