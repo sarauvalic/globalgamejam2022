@@ -32,11 +32,12 @@ public class Coin : MonoBehaviour
 		animator.SetTrigger("Reset");
 		animator.ResetTrigger("A2A");
 		animator.ResetTrigger("A2D");
-		animator.ResetTrigger("Reset");
+		
 	}
 
 	public void FlipCoin()
 	{
+		animator.ResetTrigger("Reset");
 		Debug.Log("start flip");
 		currentSide = 0;
 
