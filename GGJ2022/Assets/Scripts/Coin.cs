@@ -17,6 +17,7 @@ public class Coin : MonoBehaviour
 	public UnityEvent OnCoinFlipped;
 
 	public int currentSide = 0;
+	public int nextSide = 0;
 
 	private QuestionController questionController;
 
@@ -28,17 +29,18 @@ public class Coin : MonoBehaviour
 
 	public void ResetCoin()
 	{
+		animator.SetTrigger("Reset");
 		animator.ResetTrigger("A2A");
 		animator.ResetTrigger("A2D");
-		animator.SetTrigger("Still");
+		animator.ResetTrigger("Reset");
 	}
 
 	public void FlipCoin()
 	{
 		Debug.Log("start flip");
-		
+		currentSide = 0;
 
-		var nextSide = CalculateSide();
+		nextSide = CalculateSide();
 
 		if (currentSide == nextSide)
 		{
@@ -49,14 +51,13 @@ public class Coin : MonoBehaviour
 			animator.SetTrigger("A2D");
 		}
 
-		currentSide = 0;
 		StartCoroutine(WaitForFlip());
 	}
 
 	public void CoinFlipped()
 	{
 		Debug.Log("coin flipped");
-		questionController.ChooseQuestion(currentSide);
+		questionController.ChooseQuestion(nextSide);
 	}
 
 	private int CalculateSide()
@@ -76,8 +77,7 @@ public class Coin : MonoBehaviour
 
 	private IEnumerator WaitForFlip()
 	{
-		Debug.Log("wait for flip");
-		var seconds = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+		var seconds = 3;
 		
 		yield return new WaitForSeconds(seconds);
 		

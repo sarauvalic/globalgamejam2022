@@ -449,6 +449,10 @@ PlayableDirector:
     value: {fileID: 862786859}
   - key: {fileID: -6453000999810234734, guid: 14c50974bfbe3cb4dabbdbab49b25265, type: 2}
     value: {fileID: 311423406}
+  - key: {fileID: -5650750078182656581, guid: 14c50974bfbe3cb4dabbdbab49b25265, type: 2}
+    value: {fileID: 989994842}
+  - key: {fileID: 2371982634983617748, guid: 14c50974bfbe3cb4dabbdbab49b25265, type: 2}
+    value: {fileID: 991949154}
   m_ExposedReferences:
     m_References:
     - c0c075aee1fbda1498cf8ae6edb377fa: {fileID: 1678245750}
@@ -751,8 +755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bab166b411e8ae4bbf6f63d6b47523d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  forceStrengthMin: 50
+  rb: {fileID: 250391906}
+  forceStrengthMin: 60
   forceStrengthMax: 100
   velocityThreshold: 0.4
   forcePos: {fileID: 482527840}
@@ -831,9 +835,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RandomThreshold: 0.5
-  Weight: 0.1
+  Weight: 0.3
   animator: {fileID: 1286100116}
+  OnCoinFlipped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 93170278}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   currentSide: 0
+  nextSide: 0
 --- !u!4 &269457303
 Transform:
   m_ObjectHideFlags: 0
@@ -1495,6 +1515,10 @@ PlayableDirector:
     value: {fileID: 311423406}
   - key: {fileID: 2803811326646146279, guid: 7c29d8621ab05dc419af7fa17e2b7198, type: 2}
     value: {fileID: 862786859}
+  - key: {fileID: 2008307917151893828, guid: 7c29d8621ab05dc419af7fa17e2b7198, type: 2}
+    value: {fileID: 2132216435}
+  - key: {fileID: -5493574607382907266, guid: 7c29d8621ab05dc419af7fa17e2b7198, type: 2}
+    value: {fileID: 280011086}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &537580279
@@ -1707,6 +1731,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 545984197}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: bottomPanel_FadeToBlack
+          m_BoolArgument: 1
+        m_CallState: 2
   OnBottomChosen:
     m_PersistentCalls:
       m_Calls:
@@ -1720,6 +1756,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2014792701}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: topPanel_FadeToBlack
           m_BoolArgument: 1
         m_CallState: 2
   Pairs:
@@ -2617,7 +2665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &989994843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2793,6 +2841,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 269457302}
+        m_TargetAssemblyTypeName: Coin, Assembly-CSharp
+        m_MethodName: ResetCoin
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2978,6 +3038,12 @@ PlayableDirector:
     value: {fileID: 311423406}
   - key: {fileID: -1825436306815100893, guid: f9c584f8814c41f44b5647a49092b232, type: 2}
     value: {fileID: 94381128}
+  - key: {fileID: 8892680617286186795, guid: f9c584f8814c41f44b5647a49092b232, type: 2}
+    value: {fileID: 1423136183}
+  - key: {fileID: 8571883964442580396, guid: f9c584f8814c41f44b5647a49092b232, type: 2}
+    value: {fileID: 2014792701}
+  - key: {fileID: -4734889901594201348, guid: f9c584f8814c41f44b5647a49092b232, type: 2}
+    value: {fileID: 545984197}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1107376800
@@ -4056,6 +4122,10 @@ PlayableDirector:
     value: {fileID: 94381128}
   - key: {fileID: -1029304802991737515, guid: 39206f395a9ba744eb99764facfc5009, type: 2}
     value: {fileID: 311423406}
+  - key: {fileID: 2260417721944962959, guid: 39206f395a9ba744eb99764facfc5009, type: 2}
+    value: {fileID: 989994842}
+  - key: {fileID: -2853105323324722445, guid: 39206f395a9ba744eb99764facfc5009, type: 2}
+    value: {fileID: 991949154}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1642021990
@@ -4346,6 +4416,10 @@ PlayableDirector:
     value: {fileID: 94381128}
   - key: {fileID: -772581703002163820, guid: 15c3464176f84ec499431d35aaeb9ef0, type: 2}
     value: {fileID: 862786859}
+  - key: {fileID: 5775908335484117678, guid: 15c3464176f84ec499431d35aaeb9ef0, type: 2}
+    value: {fileID: 2132216435}
+  - key: {fileID: -5944198830182346396, guid: 15c3464176f84ec499431d35aaeb9ef0, type: 2}
+    value: {fileID: 280011086}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1678245750
