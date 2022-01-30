@@ -58,6 +58,7 @@ public class Coin : MonoBehaviour
 
 	public void FlipCoin()
 	{
+		Debug.Log("start flip");
 		animator.ResetTrigger("A2A");
 		animator.ResetTrigger("A2D");
 
@@ -78,6 +79,7 @@ public class Coin : MonoBehaviour
 
 	public void CoinFlipped()
 	{
+		Debug.Log("coin flipped");
 		questionController.ChooseQuestion(currentSide);
 	}
 
@@ -98,12 +100,10 @@ public class Coin : MonoBehaviour
 
 	private IEnumerator WaitForFlip()
 	{
-		//var seconds = animator.GetCurrentAnimatorClipInfo(0).Length;
-		var clips = animator.runtimeAnimatorController.animationClips;
+		Debug.Log("wait for flip");
+		var seconds = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
 		
-		
-		
-		yield return new WaitForSeconds((float)3.542);
+		yield return new WaitForSeconds(seconds);
 		
 		CoinFlipped();
 	}
