@@ -1632,6 +1632,7 @@ GameObject:
   - component: {fileID: 631908195}
   - component: {fileID: 631908194}
   - component: {fileID: 631908196}
+  - component: {fileID: 631908197}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1698,6 +1699,18 @@ MonoBehaviour:
     is most likely to reincarnate into a blob fish?
   - Who in the room is most likely to pull the best prank?;Who in the room is the
     most likely to fall for a prank?
+--- !u!114 &631908197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631908193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474cd1903b2c6764888ba0b1bc3d4d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &654850733
 GameObject:
   m_ObjectHideFlags: 0
